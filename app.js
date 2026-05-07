@@ -1,12 +1,14 @@
 const express = require(`express`)
+const cors = require(`cors`)
 const app = express()
 const fruits = require(`./routes/fruits`)
 
 
 app.get(`/`, (req, res) => {
-    res.send(`Hello`)
+    res.send(`Hello from my fruit app`)
 })
 
+app.use(cors())// allows access to api from diff portsgit
 // when we dont pass a route, the function will execite on every function
 app.use(express.json()) // when we recieve a body in  a request it will convert to json
 app.use(`/fruits`, fruits) //every request that hits the fruits endpoint we want to print the fruits
