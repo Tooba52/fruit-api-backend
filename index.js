@@ -1,5 +1,8 @@
 //index.js is the entry point as it is the first file that is run 
-const port = 3000
+//import .env
+require(`dotenv`).config()
+//access port through env
+const port = process.env.PORT
 const app = require(`./app`)
 
 
